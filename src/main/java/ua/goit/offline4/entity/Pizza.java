@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,7 +28,11 @@ public class Pizza {
     private long id;
     private String name;
     private BigDecimal prize;
-    @OneToMany(mappedBy = "pizza", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+
+    @OneToMany(mappedBy = "pizza",
+               cascade = CascadeType.ALL,
+               orphanRemoval = true,
+               fetch = FetchType.EAGER)
     private List<PizzaComponents> components;
 
     public long getId() {
@@ -54,16 +59,8 @@ public class Pizza {
         this.prize = prize;
     }
 
-    public List<PizzaComponents> getComponents() {
-        return components;
-    }
-
-    public void setComponents(List<PizzaComponents> components) {
-        this.components = components;
-    }
-
     @Override
     public String toString() {
-        return "Pizza{" + "id=" + id + ", name='" + name + '\'' + ", prize=" + prize + ", components=" + components + '}';
+        return "Pizza{" + "id=" + id + ", name='" + name + '\'' + ", prize=" + prize + '}';
     }
 }

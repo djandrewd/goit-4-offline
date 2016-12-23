@@ -1,6 +1,7 @@
 package ua.goit.offline4.dao;
 
 import java.math.BigDecimal;
+import java.util.Scanner;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -25,7 +26,8 @@ public class ComponentDaoHibernateTest {
         String username = System.getProperty("username");
         String password = System.getProperty("password");
 
-        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml")
+        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                        .configure("hibernate.cfg.xml")
                         .applySetting("hibernate.connection.username", username)
                         .applySetting("hibernate.connection.password", password)
                         .build();
@@ -45,6 +47,5 @@ public class ComponentDaoHibernateTest {
             System.out.println(dao.delete(cmp.getId()));
             System.out.println(dao.get(cmp.getId()));
         }
-
     }
 }

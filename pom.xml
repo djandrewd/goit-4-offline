@@ -10,9 +10,9 @@
 
     <dependencies>
         <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<version>5.1.38</version>-->
+        <!--<groupId>mysql</groupId>-->
+        <!--<artifactId>mysql-connector-java</artifactId>-->
+        <!--<version>5.1.38</version>-->
         <!--</dependency>-->
 
         <dependency>
@@ -65,4 +65,10 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>Hello</id>
+        </profile>
+    </profiles>
 </project>

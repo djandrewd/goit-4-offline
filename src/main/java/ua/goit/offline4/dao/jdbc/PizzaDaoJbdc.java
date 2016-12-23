@@ -53,7 +53,7 @@ public class PizzaDaoJbdc
                     pizza.setId(resultSet.getLong(1));
                     pizza.setName(resultSet.getString(2));
                     pizza.setPrize(resultSet.getBigDecimal(3));
-                    pizza.setComponents(getComponents(connection, pizza.getId()));
+                    //pizza.setComponents(getComponents(connection, pizza.getId()));
                     return pizza;
                 }
 
@@ -77,9 +77,9 @@ public class PizzaDaoJbdc
                     }
                 }
 
-                for (Pizza pizza : pizzas) {
+                /*for (Pizza pizza : pizzas) {
                     pizza.setComponents(getComponents(connection, pizza.getId()));
-                }
+                }*/
                 return pizzas;
             }
         }
@@ -117,7 +117,7 @@ public class PizzaDaoJbdc
                     }
                     ps.executeBatch();
                 }
-                pizza.setComponents(components);
+                //pizza.setComponents(components);
                 connection.commit();
                 return pizza;
             } catch (SQLException e) {

@@ -1,6 +1,7 @@
 package ua.goit.offline4.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -25,6 +26,7 @@ public class Component {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
+    @Column(name = "name")
     private String name;
     private BigDecimal prize;
 
